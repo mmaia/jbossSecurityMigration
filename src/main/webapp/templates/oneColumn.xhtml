@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html   xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ace="http://www.icefaces.org/icefaces/components"
+		xmlns:icecore="http://www.icefaces.org/icefaces/core">	
+
+<h:head>
+<title>CDI Abstraction</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- bootstrap css files -->
+<link rel="stylesheet" href="webjars/bootstrap/3.3.1/css/bootstrap.min-jsf.css" />
+<link rel="stylesheet" href="webjars/bootstrap/3.3.1/css/bootstrap-theme.min-jsf.css" />
+
+</h:head>
+
+<h:body role="document" style="padding-top: 70px;">
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="nav navbar-nav navbar-left" style="padding-left: 20px">
+			<a href="http://www.ibm.com" target="blank"><img src="#{facesContext.externalContext.requestContextPath}/img/ibm.jpg" width="75px" height="50px" /></a>
+		</div>
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand">JAAS Custom  Login Module</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.xhtml">Home</a></li>
+					<li><a href="https://developer.ibm.com/wasdev/docs/introducing_the_liberty_profile" target="blank">WebSphere
+							Liberty</a></li>
+					<li><a href="http://www.icefaces.org" target="blank">IceFaces</a></li>
+					<li><a href="http://getbootstrap.com" target="blank">Bootstrap</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+
+	<div class="container theme-showcase" role="main">
+		<ui:insert name="main"/>
+	</div>
+</h:body>
+</html>
