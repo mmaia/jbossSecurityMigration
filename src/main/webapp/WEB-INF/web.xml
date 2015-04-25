@@ -57,8 +57,21 @@
   <servlet-name>Faces Servlet</servlet-name>
   <url-pattern>*.xhtml</url-pattern>
  </servlet-mapping>
+ 
+ 
+ <!-- Define the Login Configuration for this Application -->
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <realm-name>JBossSecurity</realm-name>
+    <form-login-config>
+       <form-login-page>/login.xhtml</form-login-page>
+       <form-error-page>/login.xhtml</form-error-page>
+    </form-login-config>
+  </login-config>
+ 
+ 
  <!-- default file for the context - welcome files -->
  <welcome-file-list>
-  <welcome-file>index.xhtml</welcome-file>
+  <welcome-file>login.xhtml</welcome-file>
  </welcome-file-list>
 </web-app>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/oneColumn.xhtml"
+	xmlns:f="http://java.sun.com/jsf/core">
+<!--login modal-->
+<ui:define name="main">
+<div class="modal-dialog" style="padding-top: 25px">
+    <form class="form col-md-12 center-block" action='j_security_check' method="post">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-center">Login</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" id="j_username" class="form-control input-lg" placeholder="Username" name="j_username"/>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="j_password" class="form-control input-lg" placeholder="Password" name="j_password"/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" value="login">Log me in >>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-12">
+                    <span class="pull-left"><a href="http://www.ibm.com/developerworks/websphere/downloads/migtoolkit/" target="blank">Migration Toolkit</a></span><span
+                        class="pull-right"><a
+                        href="https://www.ibm.com/developerworks/community/blogs/devTips/?lang=en" target="blank">Blog</a></span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</ui:define>
+</ui:composition>
