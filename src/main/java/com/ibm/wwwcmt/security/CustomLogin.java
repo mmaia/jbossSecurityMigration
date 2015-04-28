@@ -18,7 +18,7 @@ public class CustomLogin extends UsernamePasswordLoginModule {
 
 	@SuppressWarnings("rawtypes")
 	public void initialize(Subject subject, CallbackHandler callbackHandler,
-			Map sharedState, Map options) {
+			 Map sharedState, Map options) {
 		log.info("WWWCMT: Executing CustomLogin.initialize");
 		super.initialize(subject, callbackHandler, sharedState, options);
 	}
@@ -36,11 +36,17 @@ public class CustomLogin extends UsernamePasswordLoginModule {
 		log.info("WWWCMT: Executing CustomLogin.getRoleSets");
 		SimpleGroup group = new SimpleGroup("Roles");
         try {
-            group.addMember(new SimplePrincipal("user_role"));
+            group.addMember(new SimplePrincipal("standard"));
         } catch (Exception e) {
-            throw new LoginException("Failed to create group member for " + group);
+            throw new LoginException("Error creating principal of group " + group);
         }
         return new Group[] { group };
 	}
+	
+	@Override
+    protected boolean validatePassword(String inputPassword, String expectedPassword) {
+        log.info("WWWCMT: Executing CustomLogin.validatePassword");
+		return true;
+    }
 
 }

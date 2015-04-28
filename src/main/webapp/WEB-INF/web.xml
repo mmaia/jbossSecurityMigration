@@ -58,20 +58,38 @@
   <url-pattern>*.xhtml</url-pattern>
  </servlet-mapping>
  
+ <!-- Define a Security Constraint -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>jbossSecurity</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+       <role-name>standard</role-name>
+    </auth-constraint>
+  </security-constraint>
  
- <!-- Define the Login Configuration for this Application -->
+ <!-- Define the Login Configuration -->
   <login-config>
     <auth-method>FORM</auth-method>
-    <realm-name>JBossSecurity</realm-name>
+    <realm-name>jbossSecurity</realm-name>
     <form-login-config>
        <form-login-page>/login.xhtml</form-login-page>
        <form-error-page>/login.xhtml</form-error-page>
     </form-login-config>
   </login-config>
+  
+  <!-- Security Roles -->
+  <security-role>
+    <description>
+      Allows user with this role to login.
+    </description>
+    <role-name>standard</role-name>
+  </security-role>
  
  
  <!-- default file for the context - welcome files -->
  <welcome-file-list>
-  <welcome-file>login.xhtml</welcome-file>
+  <welcome-file>home.xhtml</welcome-file>
  </welcome-file-list>
 </web-app>

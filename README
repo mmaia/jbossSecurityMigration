@@ -1,0 +1,9 @@
+Server configuration: 
+The following entry was added to server.xml in JBoss 7
+
+	<security-domain name="my-security" cache-type="default">
+        <authentication>
+            <login-module code="com.ibm.wwwcmt.security.CustomLogin" flag="required"/>
+        </authentication>
+    </security-domain>
+    
