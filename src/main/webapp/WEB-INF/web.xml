@@ -65,9 +65,19 @@
       <url-pattern>/secure/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-       <role-name>standard</role-name>
+       <role-name>USERS</role-name>
     </auth-constraint>
   </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>jbossSecurity</web-resource-name>
+      <url-pattern>/secure/admin/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+       <role-name>ADMINISTRATORS</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
  
  <!-- Define the Login Configuration -->
   <login-config>
@@ -82,13 +92,19 @@
   <!-- Security Roles -->
   <security-role>
     <description>
-      Allows user with this role to login.
+      Allows standard user with this role to login.
     </description>
-    <role-name>standard</role-name>
+    <role-name>USERS</role-name>
+  </security-role>
+  <security-role>
+  	<description>
+  		Allows admin users with this role to log in and have access to admin area
+  	</description>
+  	<role-name>ADMINISTRATORS</role-name>
   </security-role>
  
  
- <!-- default file for the context - welcome files -->
+ <!-- default file for the context welcome files -->
  <welcome-file-list>
   <welcome-file>secure/home.xhtml</welcome-file>
  </welcome-file-list>

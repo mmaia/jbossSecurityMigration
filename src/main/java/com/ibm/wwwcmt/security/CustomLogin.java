@@ -36,7 +36,7 @@ public class CustomLogin extends UsernamePasswordLoginModule {
 		log.info("WWWCMT: Executing CustomLogin.getRoleSets");
 		SimpleGroup group = new SimpleGroup("Roles");
         try {
-            group.addMember(new SimplePrincipal("standard"));
+            group.addMember(new SimplePrincipal("USERS"));
         } catch (Exception e) {
             throw new LoginException("Error creating principal of group " + group);
         }

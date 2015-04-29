@@ -29,11 +29,24 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="home.xhtml">Home</a></li>
+					<li>
+						<a href="secure/home.xhtml">
+							<img src="#{facesContext.externalContext.requestContextPath}/img/home.png" width="20px" height="20px"/> Home
+						</a>
+					</li>
 					<li><a href="https://developer.ibm.com/wasdev/docs/introducing_the_liberty_profile" target="blank">WebSphere
 							Liberty</a></li>
 					<li><a href="http://www.icefaces.org" target="blank">IceFaces</a></li>
 					<li><a href="http://getbootstrap.com" target="blank">Bootstrap</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="navbar-right">
+						<h:form id="menuForm">
+							<ace:pushButton actionListener="#{logoutCtrl.logout()}">
+								<h:graphicImage value="img/logout.png" width="20px" height="20px"/>
+							</ace:pushButton>
+						</h:form>
+					</li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
