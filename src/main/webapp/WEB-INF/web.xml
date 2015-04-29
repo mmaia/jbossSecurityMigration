@@ -62,7 +62,7 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>jbossSecurity</web-resource-name>
-      <url-pattern>/*</url-pattern>
+      <url-pattern>/secure/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
        <role-name>standard</role-name>
@@ -90,6 +90,6 @@
  
  <!-- default file for the context - welcome files -->
  <welcome-file-list>
-  <welcome-file>home.xhtml</welcome-file>
+  <welcome-file>secure/home.xhtml</welcome-file>
  </welcome-file-list>
 </web-app>

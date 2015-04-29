@@ -2,19 +2,19 @@ package com.ibm.wwwcmt.security;
 
 import java.security.acl.Group;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import javax.security.auth.Subject;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.login.LoginException;
 
-import org.jboss.logging.Logger;
 import org.jboss.security.SimpleGroup;
 import org.jboss.security.SimplePrincipal;
 import org.jboss.security.auth.spi.UsernamePasswordLoginModule;
 
 public class CustomLogin extends UsernamePasswordLoginModule {
 	
-	Logger logger = Logger.getLogger(CustomLogin.class);
+	Logger log = Logger.getLogger(CustomLogin.class.getName());
 
 	@SuppressWarnings("rawtypes")
 	public void initialize(Subject subject, CallbackHandler callbackHandler,
